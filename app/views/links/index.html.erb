@@ -1,0 +1,14 @@
+<h1> HACKER NEWS </h1>
+<%= link_to 'submit', new_link_path %> 
+
+<ol>
+  <% @links.order_by_votes.each do |link| %>
+    <li><%= form_for :vote, :url => votes_path do |f| %>
+      <%= f.hidden_field :link_id, :value => link.id %>
+      <%= f.submit 'Vote' %> <%= link.votes.count %> 
+      <a href= <%= link.url %> target="_blank" ><%= link.short_description %></a> 
+      <%= link.created_at.to_s %></li>
+    <% end %>
+  <% end %>
+</ol>
+
