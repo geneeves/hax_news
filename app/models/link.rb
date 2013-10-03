@@ -3,15 +3,15 @@ class Link < ActiveRecord::Base
   validates_presence_of :short_description
   validates_length_of :short_description, maximum: 50, message: "Tighten that description up a bit. Maximum 50 characters."
   has_many :votes
+  has_many :comments, as: :commentable
 
-  def Link.order_by_votes
-    self.all.sort { |link1, link2| link2.votes.count <=> link1.votes.count }
+  def Link.order_by_points
+    self.all.sort { |link1, link2| link2.points <=> link1.points }
   end
 
   def points
-    p age = (DateTime.now.to_i - self.created_at.to_i).to_i / 60
-    demerit = age / 15 
-    puts age
-    self.votes.count / demerit
+    age_in_minutes = (DateTime.now.to_i - self.created_at.to_i).to_i / 60
+    how_many_15_minutes_have_passed = (age_in_minutes / 15) + 1 
+    votes.count / how_many_15_minutes_have_passed
   end
 end
