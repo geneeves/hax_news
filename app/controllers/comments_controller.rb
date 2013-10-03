@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def new
-    @comment = Comment.new(:link_id => params[:link_id])
-    @comments = Comment.where("link_id =  ?", params[:link_id])
+    @comment = Comment.new(:commentable_id => params[:commentable_id], :commentable_type => params[:commentable_type])
+    @comments = Comment.where("commentable_id =  ?", params[:commentable_id])
   end
 
   def create
@@ -17,6 +17,6 @@ class CommentsController < ApplicationController
 private
   
   def comment_params
-    params.require(:comment).permit(:comment_text, :link_id)
+    params.require(:comment).permit(:comment_text, :commentable_id, :commentable_type)
   end
 end
