@@ -2,12 +2,14 @@
 <%= link_to 'submit', new_link_path %> 
 
 <ol>
-  <% @links.order_by_votes.each do |link| %>
+  <% @links.order_by_points.each do |link| %>
     <li><%= form_for :vote, :url => votes_path do |f| %>
       <%= f.hidden_field :link_id, :value => link.id %>
       <%= f.submit 'Vote' %> <%= link.votes.count %> 
       <a href= <%= link.url %> target="_blank" ><%= link.short_description %></a> 
-      <%= link.created_at.to_s %></li>
+      <%= link.created_at.to_s %> | <%= link.points %> points
+      <%= link_to "Comment", new_comment_path(:link_id => link.id) %> 
+    </li>
     <% end %>
   <% end %>
 </ol>
