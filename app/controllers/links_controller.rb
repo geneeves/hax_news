@@ -16,6 +16,12 @@ class LinksController < ApplicationController
     end
   end
 
+  def show
+    @link = Link.find(params[:id])
+    @comments = Comment.where(:commentable_id => params[:commentable_id])
+    @comment = Comment.new(:commentable_id => params[:commentable_id], :commentable_type => params[:commentable_type])
+  end
+
 
 private
 
