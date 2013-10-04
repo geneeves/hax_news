@@ -1,4 +1,6 @@
-<h1>Add a comment</h1>
+<h1><%= @link.short_description %></h1>
+
+<h2>Add a comment</h2>
 <% if @comment.errors.any? %>
   <h3>Please correct these problems:</h3>
   <ul>
@@ -16,11 +18,11 @@
   <%= f.submit %>
 <% end %>
 
+
 <ul>
-  <% @comments.each do |comment| %>
+  <% @link.comments.each do |comment| %>
     <%= render 'comments', :comment_to_render => comment %>
   <% end %>
 </ul>
-
 
 <%= link_to "Home", root_path %>

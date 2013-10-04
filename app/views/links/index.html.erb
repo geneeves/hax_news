@@ -8,9 +8,8 @@
       <%= f.submit 'Vote' %> <%= link.votes.count %> 
       <a href= <%= link.url %> target="_blank" ><%= link.short_description %></a> 
       <%= link.created_at.to_s %> | <%= link.points %> points
-      <%= link_to "Comment", new_comment_path(:commentable_id => link.id, :commentable_type => Link) %> 
+      <%= link_to "Comment", link_path(:id => link.id) %> 
     </li>
     <% end %>
   <% end %>
 </ol>
-
