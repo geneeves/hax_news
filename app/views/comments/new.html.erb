@@ -1,0 +1,26 @@
+<h1>Add a comment</h1>
+<% if @comment.errors.any? %>
+  <h3>Please correct these problems:</h3>
+  <ul>
+    <% @comment.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @comment do |f| %>
+  <%=f.label :comment_text %>
+  <%= f.text_field :comment_text %>
+  <%= f.hidden_field :commentable_id %>
+  <%= f.hidden_field :commentable_type %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @comments.each do |comment| %>
+    <%= render 'comments', :comment_to_render => comment %>
+  <% end %>
+</ul>
+
+
+<%= link_to "Home", root_path %>
