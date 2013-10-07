@@ -5,5 +5,6 @@ HackerNews::Application.routes.draw do
   resources :users, :only => [:new, :create]
   resources :sessions
 
+
   root :to => 'links#index'
 end

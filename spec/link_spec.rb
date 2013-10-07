@@ -1,6 +1,7 @@
 require 'spec_helper'
 require 'factory_girl'
 
+
 describe Link do
 
   it { should validate_presence_of(:url) }
@@ -13,12 +14,15 @@ describe Link do
 
   it "makes an array of links ordered by the number of points it has" do
     link1 = Link.create(:short_description => 'fake description', :url => "http://fake.net")
+
     # link1 = FactoryGirl.create(:link)
+
     link2 = Link.create(:short_description => 'fake description2', :url => "http://fake2.net")
     link3 = Link.create(:short_description => 'fake description3', :url => "http://fake.net3")
     1.times { Vote.create(:link_id => link1.id) }
     2.times { Vote.create(:link_id => link2.id) }
     4.times { Vote.create(:link_id => link3.id) }
+
 
     # winning_link = FactoryGirl.create(:link)
     # 8.times { FactoryGirl.create(:vote, :link => winning_link) }
