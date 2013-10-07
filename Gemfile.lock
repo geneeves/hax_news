@@ -131,6 +131,7 @@ DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 4.0.0)
   factory_girl_rails
+  coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
   pg
