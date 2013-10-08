@@ -1,7 +1,7 @@
 h1 {
   margin-top: 40px;
   background-image: url('brushedsteel.jpg');
-  background-size: 1060px;
+  background-size: 100%;
   background-repeat: none;
   background-color: #bababa;
   text-align: center;
@@ -12,12 +12,16 @@ h2 {
   padding-top: 40px;  
 }
 
+.nav {
+  padding-top: 15px;
+}
+
 .header {
   padding-bottom: 60px;
 }
 
 .post_it {
-  width: 300px;
+  width: 40%;
   text-align: center;
   margin: 0 auto;
 }
