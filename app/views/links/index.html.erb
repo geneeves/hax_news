@@ -1,21 +1,32 @@
-<h1> HACKER NEWS </h1>
-<%= link_to 'submit', new_link_path %> 
+<div class="container">
+  <div class="header">
+    <ul class="nav nav-pills pull-left"> 
+      <li class="active"><%= link_to 'Sign Up', new_user_path %></li>
+      <li><%= link_to 'Log In', new_sessions_path %></li>
+      <li><%= link_to 'Log Out', sessions_path, :method => :delete %></li>
+    </ul>
+  </div>
 
-<ol>
-  <% @links.order_by_points.each do |link| %>
-    <li><%= form_for :vote, :url => votes_path do |f| %>
-      <%= f.hidden_field :link_id, :value => link.id %>
-      <%= f.submit 'Vote' %> <%= link.votes.count %> 
-      <a href= <%= link.url %> target="_blank" ><%= link.short_description %></a> 
-      <%= link.created_at.to_s %> | <%= link.points %> points
-      <%= link_to "Comment", link_path(:id => link.id) %> 
-    </li>
-    <% end %>
-  <% end %>
+  <div class="jumbotron">
+    <h1> HACKER NEWS </h1>
+    <p class="lead"><%= link_to 'Post', new_link_path, :class => "btn btn-lg btn-success" %></p> 
+  </div>
 
-</ol>
-<p><%= link_to 'Sign Up', new_user_path %></p>
-<p><%= link_to 'Log In', new_sessions_path %></p>
-<p><%= link_to 'Log Out', sessions_path, :method => :delete %></p>
+  <div class="row marketing">
+    <ol>
+      <% @links.order_by_points.each do |link| %>
+        <li><a href= <%= link.url %> target="_blank" ><%= link.short_description %></a></br> 
+          <%= link.created_at.to_s %> | <%= link.points %> points
+          <%= link_to "Comment", link_path(:id => link.id) %>
+          <%= form_for :vote, :url => votes_path do |f| %>
+            <%= f.hidden_field :link_id, :value => link.id %>
+            <%= f.submit 'Vote', :class => "btn btn-primary btn-xs" %>
+          <% end %>  
+        </li>
+      <% end %>
+    </ol>
+  </div>
+
+</div>
 
 

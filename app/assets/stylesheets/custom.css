@@ -1,0 +1,12 @@
+h1 {
+  margin-top: 40px;
+  background-image: url('brushedsteel.jpg');
+  background-size: 1060px;
+  background-repeat: none;
+  background-color: #bababa;
+  text-align: center;
+}
+
+.header {
+  padding-bottom: 60px;
+}
