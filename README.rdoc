@@ -1,28 +1,5 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a hacker news clone, built during Epicodus Fall 2013 [http://www.epicodus.com] by Geneva Skeen [http://geneevesco.site44.com]
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To work the app locally, make sure to run [rake db:create] and [rake db:migrate] to set up the database. Start up your rails server and then you're ready to go.
