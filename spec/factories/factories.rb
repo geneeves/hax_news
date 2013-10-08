@@ -9,6 +9,7 @@ FactoryGirl.define do
   end
 
   factory :link do
+    user
     url "http://www.google.com"
     short_description "Google"
   end

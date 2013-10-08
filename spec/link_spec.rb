@@ -11,6 +11,8 @@ describe Link do
     with_long_message("Tighten that description up a bit. Maximum 50 characters.") }
   it { should have_many(:votes) }
   it { should have_many(:comments) }
+  it { should belong_to(:user) }
+  it { should validate_presence_of(:user_id) }
 
   it "makes an array of links ordered by the number of points it has" do
     link1 = FactoryGirl.create(:link)
@@ -24,9 +26,10 @@ describe Link do
     Link.order_by_points.should eq [link3, link2, link1]
   end
 
-  it "get 1 point for every vote" do
-    link = Link.create(:short_description => 'loser', :url => "http://losepoints.com")
-    2.times { Vote.create(:link_id => link.id) }
+  it "gets 1 point for every vote" do
+    user = FactoryGirl.create(:user)
+    link = FactoryGirl.create(:link)
+    2.times { FactoryGirl.create(:vote, :link => link, :user => user ) }
     link.points.should eq 2
   end
 
