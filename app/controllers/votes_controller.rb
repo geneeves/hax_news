@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   def create
-    @vote = Vote.create(vote_params)
+    current_user.votes.create(vote_params)
     redirect_to "/links", notice: "Your vote has been counted!"
   end
 

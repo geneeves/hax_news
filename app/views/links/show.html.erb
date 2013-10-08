@@ -10,14 +10,15 @@
   </ul>
 <% end %>
 
-<%= form_for @comment do |f| %>
-  <%= f.label :comment_text %>
-  <%=f.label :comment_text %>
-  <%= f.text_field :comment_text %>
-  <%= f.hidden_field :commentable_id %>
-  <%= f.hidden_field :commentable_type %>
-  <%= f.submit %>
-<% end %>
+<div class="form-horizontal">
+  <%= form_for @comment do |f| %>
+    <%= f.label :comment_text %>
+    <%= f.text_field :comment_text %>
+    <%= f.hidden_field :commentable_id %>
+    <%= f.hidden_field :commentable_type %>
+    <%= f.submit :class => "btn btn-primary btn-xs" %>
+  <% end %>
+</div>
 
 
 <ul>
