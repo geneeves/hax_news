@@ -27,6 +27,6 @@ private
 
   def link_params
     params.require(:link).permit(:url, :short_description)
-    # params.require(:vote).permit(:link_id)
+    params.require(:vote).permit(:link_id)
   end
 end
