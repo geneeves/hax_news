@@ -8,6 +8,10 @@ h1 {
   border-radius: 70px;
 }
 
+h2 {
+  padding-top: 40px;  
+}
+
 .header {
   padding-bottom: 60px;
 }
