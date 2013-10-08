@@ -5,8 +5,19 @@ h1 {
   background-repeat: none;
   background-color: #bababa;
   text-align: center;
+  border-radius: 70px;
 }
 
 .header {
   padding-bottom: 60px;
+}
+
+.post_it {
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.row {
+  padding-top: 50px
 }

@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Comment do
   it { should belong_to(:commentable) }
   it { should have_many(:comments) }
+  it { should validate_presence_of(:comment_text) }
 
   it "tells you what the original link on this comment was" do
     link = Link.create(:url => "http://www.learnhowtoprogram.com", :short_description => "Epicodus")
