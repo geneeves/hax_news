@@ -27,15 +27,14 @@ describe Link do
   end
 
   it "gets 1 point for every vote" do
-    user = FactoryGirl.create(:user)
     link = FactoryGirl.create(:link)
-    2.times { FactoryGirl.create(:vote, :link => link, :user => user ) }
+    2.times { FactoryGirl.create(:vote, :link => link) }
     link.points.should eq 2
   end
 
   it "loses half its points every fifteen minutes" do
-    link = Link.create(:short_description => 'loser', :url => "http://losepoints.com")
-    8.times { Vote.create(:link_id => link.id) }
+    link = FactoryGirl.create(:link)
+    8.times { FactoryGirl.create(:vote, :link => link) }
     sixteen_minutes_from_now = DateTime.now + 16.minutes
     DateTime.stub(:now).and_return(sixteen_minutes_from_now)
     link.points.should eq 4
