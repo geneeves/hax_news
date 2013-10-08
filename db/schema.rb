@@ -45,5 +45,4 @@ ActiveRecord::Schema.define(version: 20131007190718) do
     t.datetime "updated_at"
     t.integer  "user_id"
   end
-
 end

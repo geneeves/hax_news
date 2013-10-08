@@ -13,20 +13,12 @@ describe Link do
   it { should have_many(:comments) }
 
   it "makes an array of links ordered by the number of points it has" do
-    link1 = Link.create(:short_description => 'fake description', :url => "http://fake.net")
-
-    # link1 = FactoryGirl.create(:link)
-
-    link2 = Link.create(:short_description => 'fake description2', :url => "http://fake2.net")
-    link3 = Link.create(:short_description => 'fake description3', :url => "http://fake.net3")
-    1.times { Vote.create(:link_id => link1.id) }
-    2.times { Vote.create(:link_id => link2.id) }
-    4.times { Vote.create(:link_id => link3.id) }
-
-
-    # winning_link = FactoryGirl.create(:link)
-    # 8.times { FactoryGirl.create(:vote, :link => winning_link) }
-
+    link1 = FactoryGirl.create(:link)
+    link2 = FactoryGirl.create(:link)
+    link3 = FactoryGirl.create(:link)
+    1.times { FactoryGirl.create(:vote, :link => link1) }
+    2.times { FactoryGirl.create(:vote, :link => link2) }
+    4.times { FactoryGirl.create(:vote, :link => link3) }
     sixteen_minutes_from_now = DateTime.now + 16.minutes
     DateTime.stub(:now).and_return(sixteen_minutes_from_now)
     Link.order_by_points.should eq [link3, link2, link1]
