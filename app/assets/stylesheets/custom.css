@@ -1,15 +1,25 @@
 h1 {
   margin-top: 40px;
+  margin-bottom: 5%;
   background-image: url('brushedsteel.jpg');
   background-size: 100%;
+  background-position: relative;
   background-repeat: none;
   background-color: #bababa;
   text-align: center;
   border-radius: 70px;
+  padding: 35%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 h2 {
-  padding-top: 40px;  
+  margin-top: 40px;
+}
+
+
+.jumbotron {
+  position: relative;
 }
 
 .nav {
@@ -17,15 +27,22 @@ h2 {
 }
 
 .header {
-  padding-bottom: 60px;
+  padding-bottom: 100px;
 }
 
 .post_it {
   width: 40%;
   text-align: center;
   margin: 0 auto;
+  position: inline;
 }
 
 .row {
-  padding-top: 50px
+  padding-top: 50px;
+  padding: 10%;
+}
+
+.thread_wrapper {
+  width: 40%;
+  margin-bottom: 5%;
 }

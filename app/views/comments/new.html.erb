@@ -1,4 +1,8 @@
-<h1>Add a comment</h1>
+<div class="thread_wrapper">
+  <h1><%= @comment.commentable.comment_text %></h1>
+</div>
+
+<h2 class="text-warning">Add a comment</h2>
 <% if @comment.errors.any? %>
   <h3>Please correct these problems:</h3>
   <ul>

@@ -8,11 +8,12 @@
   </ul>
 <% end %>
 
+<div class="form-horizontal">
 <%= form_for @link do |f| %>
   <%= f.label :short_description %>
   <%= f.text_field :short_description %>
   <%= f.label :url %>
   <%= f.text_field :url %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit %>
+  <%= f.submit :class => "btn btn-primary" %>
 <% end %>
