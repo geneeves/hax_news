@@ -1,3 +1,4 @@
+
 .haxnews img {
   margin-left: auto;
   margin-right: auto;
@@ -6,6 +7,13 @@
 }
 
 #hax img {
+}
+
+h2 {
+  padding-top: 40px;  
+  padding: 35%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 h2 {
@@ -28,7 +36,10 @@ h2 {
   width: 40%;
   text-align: center;
   margin: 0 auto;
-  position: inline;
+}
+
+.row {
+  padding-top: 50px
 }
 
 .row {
