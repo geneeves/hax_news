@@ -21,11 +21,7 @@
           <% end %>
           <%= form_for :vote, :url => votes_path do |f| %>
             <%= f.hidden_field :link_id, :value => link.id %>
-<<<<<<< HEAD
-            <%= f.submit 'Vote', :class => "btn btn-primary btn-xs" %>
-=======
             <%= f.submit 'Vote', :class => "btn btn-primary btn-xs" %> <%= link.votes.count %> votes
->>>>>>> master
           <% end %>  
         </li>
       <% end %>
