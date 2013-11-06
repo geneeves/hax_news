@@ -1,8 +1,20 @@
 <li><%= comment_to_render.comment_text %><br>
-   <%= link_to "Comment", new_comment_path(:commentable_id => comment_to_render.id, :commentable_type => Comment) %>
-   <%= comment_to_render.created_at %>
-   <%= link_to "Delete", comment_path(:id => comment_to_render.id), :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+  <span class='comment-form-link'>Comment</span>
+  <%= comment_to_render.created_at %>
+  <%= link_to "Delete", comment_path(:id => comment_to_render.id), :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+  <div class="comment-form">
+    <div class="form-horizontal">
+	    <%= form_for @comment do |f| %>
+	      <%= f.label :comment_text %>
+	      <%= f.text_field :comment_text %>
+	      <%= f.hidden_field :commentable_id, :value => comment_to_render.id %>
+	      <%= f.hidden_field :commentable_type, :value => Comment %>
+	      <%= f.submit :class => "btn btn-primary" %>
+	    <% end %>
+  	</div>
+  </div>
+
     <% comment_to_render.comments.each do |comment| %>
-    <ul> <%= render 'comments', :comment_to_render => comment %></ul>
+    <ul><%= render 'comments', :comment_to_render => comment %></ul>
   <% end %>
 </li>

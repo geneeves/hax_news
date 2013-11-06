@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby'
 gem 'factory_girl_rails'
 gem 'bootstrap-sass'
+gem 'jquery-turbolinks'
 
 
 group :test, :development do

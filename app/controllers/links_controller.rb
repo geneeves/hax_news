@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :redirect_guest_users, :only => [:new, :create]
+  before_action :redirect_guest_users, :only => [:new, :create, :show]
 
   def index
     @links = Link.all

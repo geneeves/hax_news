@@ -7,12 +7,17 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comments = Comment.where(:commentable_id => params[:commentable_id])
-    @comment = current_user.comments.new(comment_params)
-    if @comment.save
-      redirect_to link_path(:id => @comment.link.id)
+    if current_user
+      @comments = Comment.where(:commentable_id => params[:commentable_id])
+      @comment = current_user.comments.new(comment_params)
+      if @comment.save
+        redirect_to link_path(:id => @comment.link.id)
+      else
+        render :new
+      end
     else
-      render :new
+      flash[:notice] = "You must log in or create an account to do that."
+      render new_user_path
     end
   end
 

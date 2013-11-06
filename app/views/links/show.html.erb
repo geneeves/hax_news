@@ -1,31 +1,32 @@
-<h1><%= @link.short_description %></h1>
+<div class='comments'>
+  <h1><a href = <%= @link.url %> target ='_blank'><%= @link.short_description %></a></h1>
 
-<h2 class="text-warning">Add a comment</h2>
-<% if @comment.errors.any? %>
-  <h3>Please correct these problems:</h3>
+  <h4 class="text-warning">Add a comment</h4>
+  <% if @comment.errors.any? %>
+    <h3>Please correct these problems:</h3>
+    <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="form-horizontal">
+    <%= form_for @comment do |f| %>
+      <%= f.label :comment_text %>
+      <%= f.text_field :comment_text %>
+      <%= f.hidden_field :commentable_id %>
+      <%= f.hidden_field :commentable_type %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.submit :class => "btn btn-primary btn-xs" %>
+    <% end %>
+  </div>
+
   <ul>
-    <% @comment.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+    <% @link.comments.each do |comment| %>
+      <%= render 'comments', :comment_to_render => comment %>
     <% end %>
   </ul>
-<% end %>
 
-<div class="form-horizontal">
-  <%= form_for @comment do |f| %>
-    <%= f.label :comment_text %>
-    <%= f.text_field :comment_text %>
-    <%= f.hidden_field :commentable_id %>
-    <%= f.hidden_field :commentable_type %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit :class => "btn btn-primary btn-xs" %>
-  <% end %>
+  <%= link_to "Home", root_path %>
 </div>
-
-
-<ul>
-  <% @link.comments.each do |comment| %>
-    <%= render 'comments', :comment_to_render => comment %>
-  <% end %>
-</ul>
-
-<%= link_to "Home", root_path %>

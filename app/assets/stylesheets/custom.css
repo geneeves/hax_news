@@ -1,22 +1,16 @@
-h1 {
-  margin-top: 40px;
-  margin-bottom: 5%;
-  background-image: url('brushedsteel.jpg');
-  background-size: 100%;
-  background-position: relative;
-  background-repeat: none;
-  background-color: #bababa;
-  text-align: center;
-  border-radius: 70px;
-  padding: 35%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+.haxnews img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-left: -50px;
+}
+
+#hax img {
 }
 
 h2 {
   margin-top: 40px;
 }
-
 
 .jumbotron {
   position: relative;
@@ -45,4 +39,18 @@ h2 {
 .thread_wrapper {
   width: 40%;
   margin-bottom: 5%;
+}
+
+.comments {
+  margin-left: 100px;
+}
+
+#comment-form-link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
+.comment-form {
+  display: none;
 }

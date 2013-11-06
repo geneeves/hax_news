@@ -1,6 +1,11 @@
 <div class="container-fluid">
+  <div class='container'>
+    <div class='haxnews'>
+      <span id='hax'><%= image_tag 'HAX.png' %></span>
+      <span id='news'><%= image_tag 'NEWS.png' %></span>
+    </div>
+  </div>
   <div class="jumbotron">
-    <h1> HACKED UP NEWS </h1>
     <div class="post_it">
       <%= link_to 'Post', new_link_path, :class => "btn btn-success btn-block" %>
     </div>
@@ -11,7 +16,9 @@
       <% @links.order_by_points.each do |link| %>
         <li><a href= <%= link.url %> target="_blank" ><%= link.short_description %></a></br> 
           <%= link.created_at.to_s %> | <%= link.points %> points
-          <%= link_to "Comments", link_path(:id => link.id) %>
+          <% if link.comments %>
+            <%= link_to "Comments", link_path(:id => link.id) %>
+          <% end %>
           <%= form_for :vote, :url => votes_path do |f| %>
             <%= f.hidden_field :link_id, :value => link.id %>
             <%= f.submit 'Vote', :class => "btn btn-primary btn-xs" %> <%= link.votes.count %> votes
@@ -20,7 +27,6 @@
       <% end %>
     </ol>
   </div>
-
 </div>
 
 
