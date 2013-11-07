@@ -6,7 +6,7 @@ During the build of this project, I was working with hand coding user authentica
 
 To work the app locally: clone it, then make sure to run `rake db:create` and `rake db:schema:load` to set up the database. Start up your rails server with `rails s` and then you're ready to go.
 
-You can try HAXNews out yourself on Heroku over [here](http://haxsnews.herokuapp.com)!
+You can try HAXNews out yourself on Heroku over [here](http://haxnews.herokuapp.com)!
 
 Ideas for next steps:
 
