@@ -9,7 +9,10 @@ To work the app locally: clone it, then make sure to run `rake db:create` and `r
 You can try HAXNews out yourself on Heroku over [here](http://haxsnews.herokuapp.com)!
 
 Ideas for next steps:
-	- Add rotating 3D animation to HAXNews logo
-	- User profile analytics to track voted-on links and popularity of posts
-	- Report spam links/limit uniqueness of post
+
+	.Add rotating 3D animation to HAXNews logo
+	
+	.User profile analytics to track voted-on links and popularity of posts
+	
+	.Report spam links/limit uniqueness of post
 
