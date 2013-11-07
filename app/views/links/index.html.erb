@@ -1,13 +1,15 @@
 <div class="container-fluid">
   <div class='container'>
-    <div class='haxnews'>
-      <span id='hax'><%= image_tag 'HAX.png' %></span>
-      <span id='news'><%= image_tag 'NEWS.png' %></span>
+    <div class='row'>
+      <div class='haxnews img-responsive'>
+        <span id='hax'><%= image_tag 'HAX.png' %></span>
+        <span id='news'><%= image_tag 'NEWS.png' %></span>
+      </div>
     </div>
   </div>
   <div class="jumbotron">
     <div class="post_it">
-      <%= link_to 'Post', new_link_path, :class => "btn btn-success btn-block" %>
+      <%= link_to 'Post', new_link_path, :class => "btn btn-default btn-block" %>
     </div>
   </div>
 
@@ -21,7 +23,7 @@
           <% end %>
           <%= form_for :vote, :url => votes_path do |f| %>
             <%= f.hidden_field :link_id, :value => link.id %>
-            <%= f.submit 'Vote', :class => "btn btn-primary btn-xs" %> <%= link.votes.count %> votes
+            <%= f.submit 'Vote', :class => "btn btn-default btn-xs" %> <%= link.votes.count %> votes
           <% end %>  
         </li>
       <% end %>

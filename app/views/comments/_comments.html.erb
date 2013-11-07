@@ -1,5 +1,5 @@
 <li><%= comment_to_render.comment_text %><br>
-   <span class='comment-form-link'>Comment</span>
+   <span class='comment-form-link text-warning'>Comment</span>
    <%= comment_to_render.created_at %>
    <%= link_to "Delete", comment_path(:id => comment_to_render.id), :method => :delete, :data => { :confirm => 'Are you sure?'} %>
    <div class="comment-form">

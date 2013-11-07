@@ -33,7 +33,7 @@ private
 
   def redirect_guest_users
     unless current_user
-      flash[:notice] = "You need to create an account to do that."
+      flash[:alert] = "You need to create an account to do that."
       redirect_to new_user_path
     end
   end

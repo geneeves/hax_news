@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
         render :new
       end
     else
-      flash[:notice] = "You must log in or create an account to do that."
+      flash[:alert] = "You must log in or create an account to do that."
       render new_user_path
     end
   end
