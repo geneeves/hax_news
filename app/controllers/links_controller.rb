@@ -24,7 +24,6 @@ class LinksController < ApplicationController
     @comment = Comment.new(:commentable_id => params[:id], :commentable_type => "Link", :user_id => current_user.id)
   end
 
-
 private
 
   def link_params
