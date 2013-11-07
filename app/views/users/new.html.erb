@@ -3,12 +3,12 @@
   <div class="form-horizontal">
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
-          <h2>Form is invalid</h2>
-          <ul>
-            <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
+        <h2>Form is invalid</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
       <% end %>
       <%= f.label :name %>
       <%= f.text_field :name %>

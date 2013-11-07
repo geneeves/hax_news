@@ -16,7 +16,7 @@
 	    <% end %>
 	  </div>
   </div>
-    <% comment_to_render.comments.each do |comment| %>
-    	<ul><%= render 'comments', :comment_to_render => comment %></ul>
-  	<% end %>
+  <% comment_to_render.comments.each do |comment| %>
+  	<ul><%= render 'comments', :comment_to_render => comment %></ul>
+	<% end %>
 </li>

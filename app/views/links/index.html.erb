@@ -23,12 +23,10 @@
           <% end %>
           <%= form_for :vote, :url => votes_path do |f| %>
             <%= f.hidden_field :link_id, :value => link.id %>
-            <%= f.submit 'Vote', :class => "btn btn-default btn-xs" %> <%= link.votes.count %> votes
+            <%= f.submit 'Vote', :class => "btn btn-default btn-xs" %><%= link.votes.count %> votes
           <% end %>  
         </li>
       <% end %>
     </ol>
   </div>
 </div>
-
-

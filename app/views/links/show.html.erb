@@ -1,6 +1,5 @@
 <div class='comments'>
-  <h1><a href = <%= @link.url %> target ='_blank'><%= @link.short_description %></a></h1>
-
+  <h1><a href=<%= @link.url %> target='_blank'><%= @link.short_description %></a></h1>
   <h4 class="text-warning">Add a comment</h4>
   <% if @comment.errors.any? %>
     <h3>Please correct these problems:</h3>
