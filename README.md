@@ -1,6 +1,6 @@
 #README
 
-This app is a hacker news clone, built during [Epicodus Fall 2013](http://www.epicodus.com) by [Geneva Skeen](http://geneevesco.site44.com).
+This app is a Hacker News clone, built during [Epicodus Fall 2013](http://www.epicodus.com) by [Geneva Skeen](http://geneevesco.site44.com).
 
 During the build of this project, I was working with hand coding user authentication, a polymorphic comment model, and a voting algorithm which degraded the points value of a link based on time passed since it had been posted vs the number of votes it had. 
 
